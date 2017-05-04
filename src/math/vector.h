@@ -92,8 +92,10 @@ class Vector2
 				}
 
 				friend std::ostream& operator <<(std::ostream &os, const Vector2<T> &v){
-					return os << std::setw(8) << v.x_" " << std::setw(8) << v.y_ << std::endl;
+					return os << std::setw(8) << v.x_<< " " << std::setw(8) << v.y_ << std::endl;
 				}
+
+				
 
 };
 

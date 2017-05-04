@@ -20,7 +20,7 @@ int main(){
 
 
 	printf("%d\n",v1==v2);
-	//std::cout << v1 << std::endl;
+	std::cout << v1 << std::endl;
 	std::cout << v1[0] << std::endl;
 	printf("hello world!\n");
 }
