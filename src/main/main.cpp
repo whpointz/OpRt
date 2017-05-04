@@ -8,8 +8,20 @@
 **/
 
 #include <stdio.h>
+#include <iostream>
+#include "../math/vector.h"
 
 int main(){
+	
+	using namespace OpRt;
+
+	Vector2d v1(1);
+	Vector2d v2(1);
+
+
+	printf("%d\n",v1==v2);
+	//std::cout << v1 << std::endl;
+	std::cout << v1[0] << std::endl;
 	printf("hello world!\n");
 }
 
