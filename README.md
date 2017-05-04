@@ -1,5 +1,5 @@
 # OpRt
-[![Author](https://img.shields.io/badge/Author-Whpointz-blue.svg)]()
+[![Author](https://img.shields.io/badge/Author-Whpointz-blue.svg)](https://github.com/whpointz)
 
 OpRt is a Ray Tracer like optix.
 
