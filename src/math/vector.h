@@ -217,11 +217,12 @@ class Vector3
 				}
 };
 
-typedef Vector3<double> Vector3d;
-typedef Vector3<double> Color;
-typedef Vector3<float> Vector3f;
-typedef Vector3<int> Vector3i;
-typedef Vector3<unsigned int> Vector3u;
+typedef Vector3<double>			Vector3d;
+typedef Vector3<double>			Color;
+typedef Vector3<float>			Vector3f;
+typedef Vector3<int>			Vector3i;
+typedef Vector3<unsigned int>	Vector3u;
+typedef Vector3<double>			Point3d;
 
 template<typename T, typename U>
 inline Vector3<T> operator*(const U &u, const Vector3<T> &v){
