@@ -22,82 +22,80 @@ template <typename  T>
 class Vector2
 {
 
-		public:
+	public:
 					
-				T x_, y_;
+		T x_, y_;
 
-				Vector2() :x_(0), y_(0) {  }
-				Vector2(const T &t) :x_(t), y_(t) {  }
-				Vector2(const T &x, const T &y) :x_(x), y_(y) {  }
-				Vector2(const Vector2<T> &v) :x_(v.x_), y_(v.y_) {  }
-				Vector2<T> & operator = (const Vector2<T> &v) {
-					x_ = v.x_;
-					y_ = v.y_;
-					return *this;
-				}
-				
+		Vector2() :x_(0), y_(0) {  }
+		Vector2(const T &t) :x_(t), y_(t) {  }
+		Vector2(const T &x, const T &y) :x_(x), y_(y) {  }
+		Vector2(const Vector2<T> &v) :x_(v.x_), y_(v.y_) {  }
+		Vector2<T> & operator = (const Vector2<T> &v) {
+			x_ = v.x_;
+			y_ = v.y_;
+			return *this;
+		}
+		
 
-				bool operator == (const Vector2<T> &v)const  { return x_ == v.x_ && y_ == v.y_; }
-				bool operator != (const Vector2<T> &v)const  { return !operater == (v); }
-				
-				Vector2<T> operator + (const Vector2<T> &v)const {
-					return Vector2<T>(x_ + v.x_, y_ + v.y_);
-				}
-				Vector2<T>& operator +=(const Vector2<T> &v){
-					x_ += v.x_;
-					y_ += v.y_;
-					return *this;
-				}
+		bool operator == (const Vector2<T> &v)const  { return x_ == v.x_ && y_ == v.y_; }
+		bool operator != (const Vector2<T> &v)const  { return !operater == (v); }
+		
+		Vector2<T> operator + (const Vector2<T> &v)const {
+			return Vector2<T>(x_ + v.x_, y_ + v.y_);
+		}
+		Vector2<T>& operator +=(const Vector2<T> &v){
+			x_ += v.x_;
+			y_ += v.y_;
+			return *this;
+		}
 
-				Vector2<T> operator - (const Vector2<T> &v)const {
-					return Vector2<T>(x_ - v.x_, y_ - v.y_);
-				}
-				Vector2<T>& operator -=(const Vector2<T> &v){
-					x_ -= v.x_;
-					y_ -= v.y_;
-					return *this;
-				}
+		Vector2<T> operator - (const Vector2<T> &v)const {
+			return Vector2<T>(x_ - v.x_, y_ - v.y_);
+		}
+		Vector2<T>& operator -=(const Vector2<T> &v){
+			x_ -= v.x_;
+			y_ -= v.y_;
+			return *this;
+		}
 
-				template<typename U>
-				Vector2<T> operator *(const U u)const{
-					return Vector2<T>(x_ * u, y_ * u);
-				}
-				template<typename U>
-				Vector2<T>& operator *=(const U u){
-					x_ *= u;
-					y_ *= u;
-					return *this;
-				}
+		template<typename U>
+		Vector2<T> operator *(const U u)const{
+			return Vector2<T>(x_ * u, y_ * u);
+		}
+		template<typename U>
+		Vector2<T>& operator *=(const U u){
+			x_ *= u;
+			y_ *= u;
+			return *this;
+		}
 
-				template<typename U>
-				Vector2<T> operator /(const U u)const{
-					double inv = 1.0 / u;
-					return Vector2<T>(x_ * inv, y_ * inv);
-				}
-				template<typename U>
-				Vector2<T>& operator /=(const U u){
-					double inv = 1.0 / u;
-					x_ *= inv;
-					y_ *= inv;
-					return *this;
-				}
+		template<typename U>
+		Vector2<T> operator /(const U u)const{
+			double inv = 1.0 / u;
+			return Vector2<T>(x_ * inv, y_ * inv);
+		}
+		template<typename U>
+		Vector2<T>& operator /=(const U u){
+			double inv = 1.0 / u;
+			x_ *= inv;
+			y_ *= inv;
+			return *this;
+		}
 
-				Vector2<T> operator - () const { return Vector2<T>(-x_, -y_); }
+		Vector2<T> operator - () const { return Vector2<T>(-x_, -y_); }
 
-				const T& operator[](const int i) const{//后面一个const是修饰的return的值：const T 前面一个值是修饰的返回的值const T &
-					assert(i >= 0 && i <= 1);
-					if (i == 0) return x_;
-					else return y_;
-				}
+		const T& operator[](const int i) const{//后面一个const是修饰的return的值：const T 前面一个值是修饰的返回的值const T &
+			assert(i >= 0 && i <= 1);
+			if (i == 0) return x_;
+			else return y_;
+		}
 
-				double length2() const { return x_*x_ + y_*y_; }
-				double length() const { return sqrt(length2()); }
+		double length2() const { return x_*x_ + y_*y_; }
+		double length() const { return sqrt(length2()); }
 
-				friend std::ostream& operator <<(std::ostream &os, const Vector2<T> &v){
-					return os << std::setw(8) << v.x_<< " " << std::setw(8) << v.y_ << std::endl;
-				}
-
-				
+		friend std::ostream& operator <<(std::ostream &os, const Vector2<T> &v){
+			return os << std::setw(8) << v.x_<< " " << std::setw(8) << v.y_ << std::endl;
+		}
 
 };
 
@@ -131,90 +129,90 @@ inline Vector2<T> mul(const Vector2<T> &lhs, const Vector2<T> &rhs){
 template<typename T>
 class Vector3
 {
-		public:
-				
-				T x_, y_, z_;
+	public:
 
-				Vector3<T>() : x_(0), y_(0), z_(0) {  }
-				Vector3<T>(const T &t) : x_(t), y_(t), z_(t) {  }
-				Vector3<T>(const T &x, const T &y, const T &z) : x_(x), y_(y), z_(z) {  }
-				Vector3<T>(const  Vector3<T> &v) : x_(v.x_), y_(v.y_), z_(v.z_) {  }
+		T x_, y_, z_;
 
-				Vector3<T> & operator = (const Vector3<T> &v){
-					x_ = v.x_;
-					y_ = v.y_;
-					z_ = v.z_;
-					return *this;
-				}
+		Vector3<T>() : x_(0), y_(0), z_(0) {  }
+		Vector3<T>(const T &t) : x_(t), y_(t), z_(t) {  }
+		Vector3<T>(const T &x, const T &y, const T &z) : x_(x), y_(y), z_(z) {  }
+		Vector3<T>(const  Vector3<T> &v) : x_(v.x_), y_(v.y_), z_(v.z_) {  }
 
-				bool operator == (const Vector3<T> &v) const { return (x_ == v.x_ && y_ == v.y_ && z_ == v.z_); }
-				bool operator != (const Vector3<T> &v) const { return !operator == (v); }
+		Vector3<T> & operator = (const Vector3<T> &v){
+			x_ = v.x_;
+			y_ = v.y_;
+			z_ = v.z_;
+			return *this;
+		}
 
-				Vector3<T> operator + (const Vector3<T> &v) const{
-					return Vector3<T>(x_ + v.x_, y_ + v.y_, z_ + v.z_);
-				}
-				Vector3<T> & operator += (const Vector3<T> &v){
-					_x += v.x_;
-					_y += v.y_;
-					_z += v.z_;
-					return *this;
-				}
+		bool operator == (const Vector3<T> &v) const { return (x_ == v.x_ && y_ == v.y_ && z_ == v.z_); }
+		bool operator != (const Vector3<T> &v) const { return !operator == (v); }
 
-				Vector3<T> operator - (const Vector3<T> &v) const{
-					return Vector3<T>(x_ - v.x_, y_ - v.y_, z_ - v.z_);
-				}
-				Vector3<T> & operator -= (const Vector3<T> &v){
-					_x -= v.x_;
-					_y -= v.y_;
-					_z -= v.z_;
-					return *this;
-				}
+		Vector3<T> operator + (const Vector3<T> &v) const{
+			return Vector3<T>(x_ + v.x_, y_ + v.y_, z_ + v.z_);
+		}
+		Vector3<T> & operator += (const Vector3<T> &v){
+			_x += v.x_;
+			_y += v.y_;
+			_z += v.z_;
+			return *this;
+		}
 
-				template<typename U>
-				Vector3<T> operator * (const U &u) const {
-					return Vector3<T>(x_*u, y_*u, z_*u);
-				}
-				template<typename U>
-				Vector3<T> & operator *= (const U &u){
-					x_ *= u; 
-					y_ *= u; 
-					z_ *= u;
-					return *this;
-				}
+		Vector3<T> operator - (const Vector3<T> &v) const{
+			return Vector3<T>(x_ - v.x_, y_ - v.y_, z_ - v.z_);
+		}
+		Vector3<T> & operator -= (const Vector3<T> &v){
+			_x -= v.x_;
+			_y -= v.y_;
+			_z -= v.z_;
+			return *this;
+		}
 
-				template<typename U>
-				Vector3<T> operator / (const U &u) const {
-					double inv = 1.0 / u;
-					return Vector3<T>(x_*inv, y_*inv, z_*inv);
-				}
-				template<typename U>
-				Vector3<T> & operator /= (const U &u){
-					double inv = 1.0 / u;
-					x_ *= inv;
-					y_ *= inv;
-					z_ *= inv;
-					return *this;
-				}
+		template<typename U>
+		Vector3<T> operator * (const U &u) const {
+			return Vector3<T>(x_*u, y_*u, z_*u);
+		}
+		template<typename U>
+		Vector3<T> & operator *= (const U &u){
+			x_ *= u;
+			y_ *= u;
+			z_ *= u;
+			return *this;
+		}
 
-				Vector3<T> operator - () const {
-					return Vector3<T>(-x_, -y_, -z_);
-				}
+		template<typename U>
+		Vector3<T> operator / (const U &u) const {
+			double inv = 1.0 / u;
+			return Vector3<T>(x_*inv, y_*inv, z_*inv);
+		}
+		template<typename U>
+		Vector3<T> & operator /= (const U &u){
+			double inv = 1.0 / u;
+			x_ *= inv;
+			y_ *= inv;
+			z_ *= inv;
+			return *this;
+		}
 
-				T& operator [](const int i){
-					assert(i >= 0 && i <= 2);
-					if (i == 0){ return x_; }
-					else if (i == 1) { return y_; }
-					else return z_;
-				}
+		Vector3<T> operator - () const {
+			return Vector3<T>(-x_, -y_, -z_);
+		}
 
-				double length2() const { return x_*x_ + y_*y_ + z_*z_; }
-				double length() const { return sqrt(length2()); }
+		T& operator [](const int i){
+			assert(i >= 0 && i <= 2);
+			if (i == 0){ return x_; }
+			else if (i == 1) { return y_; }
+			else return z_;
+		}
 
-				friend std::ostream & operator << (std::ostream &os, const Vector3<T> &v){
-					return os << std::setw(8) << v.x_ << " " 
-						      << std::setw(8) << v.y_ << " " 
-							  << std::setw(8) << v.z_ << " " << std::endl;
-				}
+		double length2() const { return x_*x_ + y_*y_ + z_*z_; }
+		double length() const { return sqrt(length2()); }
+
+		friend std::ostream & operator << (std::ostream &os, const Vector3<T> &v){
+			return os << std::setw(8) << v.x_ << " "
+				<< std::setw(8) << v.y_ << " "
+				<< std::setw(8) << v.z_ << " " << std::endl;
+		}
 };
 
 typedef Vector3<double>			Vector3d;

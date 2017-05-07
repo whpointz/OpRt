@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <iostream>
 #include "../math/vector.h"
+#include "../math/ray.h"
 
 int main(){
 	
@@ -44,9 +45,12 @@ int main(){
 
 
 
-
-
 	printf("hello world!\n");
+
+
+	Ray ray(v3, v4);
+	std::cout << ray << std::endl;
+
 }
 
 
