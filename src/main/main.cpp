@@ -11,6 +11,7 @@
 #include <iostream>
 #include "../math/vector.h"
 #include "../math/ray.h"
+#include "../object/sphere.h"
 
 int main(){
 	
@@ -50,6 +51,10 @@ int main(){
 
 	Ray ray(v3, v4);
 	std::cout << ray << std::endl;
+
+	printf("hello world!\n");
+
+	//Sphere sp(v3, 100);
 
 }
 

@@ -13,7 +13,35 @@
 #include <iostream>
 #include <vector>
 
-#include <../math/ray.h>
+#include "../math/ray.h"
+namespace OpRt{
 
+class Object
+{
+	public:
+
+		Object() = default;
+
+		virtual bool intersect(const Ray &ray) const = 0;
+		virtual bool hit(const Ray &ray,const double &distance) const{ return false; }
+		virtual void computeBox(std::vector<double> &, std::vector<double> &, const Vector3d *) const{
+			std::cerr << "virtual function called in Object :( \n";
+			exit(-1);
+		}
+
+		virtual std::ostream& print(std::ostream &) const = 0;
+
+		friend std::ostream& operator<<(std::ostream &os, const Object *obj){
+			obj->print(os);
+			return os;
+		}
+
+		virtual ~Object() {};
+
+};
+
+
+
+}// namespace OpRt
 
 #endif /* _OBJECT_H_ */

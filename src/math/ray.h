@@ -20,8 +20,8 @@ class  Ray
 
 		Ray(const Point3d &ori, const Vector3d &dir) :ori_(ori), dir_(dir) { }
 
-		void SetOrigin(const Point3d &ori){ ori_ = ori; }
-		void SetDirection(const Vector3d &dir){ dir_ = dir; }
+		void setOrigin(const Point3d &ori){ ori_ = ori; }
+		void setDirection(const Vector3d &dir){ dir_ = dir; }
 		
 		const Point3d & origin() const { return ori_; }
 		const Vector3d & direction() const { return dir_; }
