@@ -10,16 +10,17 @@
 
 namespace OpRt
 {
-
+	/*
 	void Sphere::computeBox(std::vector<double> &near, std::vector<double> &far, const Vector3d *normal) const{
 		for (size_t i = 0, end = near.size(); i != end; ++i){
-			double p = proj(center_,normal[i]);
+			double p = proj(center_,normal[i]); //º∆À„
 			double n = p - radius_;
 			double f = p + radius_;
 			if (n < near[i]) near[i] = n;
 			if (f > far[i]) far[i] = f;
 		}
 	}
+	
 
 	bool Sphere::hit(const Ray &ray, const double &distance) const{
 		Vector3d l = center_ - ray.origin();
@@ -39,9 +40,14 @@ namespace OpRt
 		if (dis < distance) return true;
 		return false;
 	}
+	*/
 
-
-
-
+	double Sphere::intersect(const Ray &r)const{
+		Vector3d op = center_ - r.origin();
+		double t, eps = 1e-4, b = dot(op, r.direction()), det = b*b - dot(op, op) + radius_*radius_;
+		if (det < 0) return 0;
+		else det = std::sqrt(det);
+		return (t = b - det)>eps ? t : ((t = b + det)>eps ? t : 0);
+	}
 
 } // OpRt

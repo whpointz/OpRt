@@ -22,7 +22,7 @@ class Object
 
 		Object() = default;
 
-		virtual bool intersect(const Ray &ray) const = 0;
+		virtual double intersect(const Ray &ray) const = 0;
 		virtual bool hit(const Ray &ray,const double &distance) const{ return false; }
 		virtual void computeBox(std::vector<double> &, std::vector<double> &, const Vector3d *) const{
 			std::cerr << "virtual function called in Object :( \n";
