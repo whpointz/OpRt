@@ -18,10 +18,10 @@ int main(){
 	using namespace OpRt;
 
 	Vector2d v1(1);
-	Vector2d v2(2,3);
+	Vector2d v2(2, 3);
 
 
-	printf("%d\n",v1==v2);
+	printf("%d\n", v1 == v2);
 	std::cout << v1 << std::endl;
 	std::cout << v1[0] << std::endl;
 	std::cout << cross(v1, v2) << std::endl;

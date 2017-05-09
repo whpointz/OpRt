@@ -11,6 +11,7 @@
 #define _SPHERE_H_
 
 #include "../core/object.h"
+#include "../core/material.h"
 
 namespace OpRt{
 
@@ -18,12 +19,14 @@ class Sphere : public Object
 {
 	public:
 		
-		Sphere(const Point3d &center, const double  radius) :center_(center), radius_(radius), radius2_(radius * radius), inv2radius_(1.0/(2*radius)) {  }
+		Sphere(const double  radius, const Point3d &center, const Point3d &emission, const Point3d &color, const  Material::Type &refl) :center_(center), radius_(radius), radius2_(radius * radius), inv2radius_(1.0 / (2 * radius)),emission_(emission),color_(color),refl_(refl) {  }
 		
+		//do this after 99 ray
 		//void computeBox(std::vector<double> &near, std::vector<double> &far, const Vector3d *normal) const override; //const为常量性 在基类中也有const
 
 		double  intersect(const Ray &r) const override;
 
+		//do this after 99 ray
 		//bool hit(const Ray &ray, const double &distance) const override;
 
 		std::ostream& print(std::ostream &os) const override{
@@ -36,13 +39,13 @@ class Sphere : public Object
 		Point3d center_;
 		Point3d emission_;
 		Point3d color_;
+		Material::Type refl_;
 		double radius_;
 		double radius2_;
 		double inv2radius_;
 
 
 };
-
 
 
 } //namespace OpRt
