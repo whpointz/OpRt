@@ -2,7 +2,7 @@
  *    > Author:   whpointz
  *    > Mail:     506273980@qq.com
  *    > Github:   https://www.github.com/whpointz
- *    > Description:
+ *    > Description: 一些会用到的数学常量
  *
  *    > Created Time: 2017/05/09 23:41:37
 **/

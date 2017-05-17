@@ -12,49 +12,24 @@
 #include "../math/vector.h"
 #include "../math/ray.h"
 #include "../object/sphere.h"
+#include "../core/material.h"
 
 int main(){
 	
 	using namespace OpRt;
 
-	Vector2d v1(1);
-	Vector2d v2(2, 3);
-
-
-	printf("%d\n", v1 == v2);
-	std::cout << v1 << std::endl;
-	std::cout << v1[0] << std::endl;
-	std::cout << cross(v1, v2) << std::endl;
-	std::cout << normalize(v1) << std::endl;
-	std::cout << mul(v1, v2) << std::endl;
-	std::cout << dot(v1, v2) << std::endl;
-
-
-
-
-	printf("hello world!\n");
-
-	Vector3d v3(1,2,3);
-	Vector3d v4(4,4,6);
-	printf("%d\n", v3 == v4);
-	std::cout << v3 << std::endl;
-	std::cout << v3[0] << std::endl;
-	std::cout << cross(v3, v4) << std::endl;
-	std::cout << normalize(v3) << std::endl;
-	std::cout << mul(v3,v4) << std::endl;
-	std::cout << dot(v3, v4) << std::endl;
-
-
-
-	printf("hello world!\n");
-
-
-	Ray ray(v3, v4);
-	std::cout << ray << std::endl;
-
-	printf("hello world!\n");
-
-	//Sphere sp(v3, 100);
+	Sphere spheres[] =  //Scene: radius, position, emission, color, material
+	{
+		Sphere(1e5, Vector3d(1e5 + 1, 40.8, 81.6), Vector3d(), Vector3d(.75, .25, .25), DIFF),//Left
+		Sphere(1e5, Vector3d(-1e5 + 99, 40.8, 81.6), Vector3d(), Vector3d(.25, .25, .75), DIFF),//Rght
+		Sphere(1e5, Vector3d(50, 40.8, 1e5), Vector3d(), Vector3d(.75, .75, .75), DIFF),//Back
+		Sphere(1e5, Vector3d(50, 40.8, -1e5 + 170), Vector3d(), Vector3d(), DIFF),//Frnt
+		Sphere(1e5, Vector3d(50, 1e5, 81.6), Vector3d(), Vector3d(.75, .75, .75), DIFF),//Botm
+		Sphere(1e5, Vector3d(50, -1e5 + 81.6, 81.6), Vector3d(), Vector3d(.75, .75, .75), DIFF),//Top
+		Sphere(16.5, Vector3d(27, 16.5, 47), Vector3d(), Vector3d(1, 1, 1)*.999, SPEC),//Mirr
+		Sphere(16.5, Vector3d(73, 16.5, 78), Vector3d(), Vector3d(1, 1, 1)*.999, REFR),//Glas
+		Sphere(600, Vector3d(50, 681.6 - .27, 81.6), Vector3d(12, 12, 12), Vector3d(), DIFF) //Lite
+	};
 
 }
 

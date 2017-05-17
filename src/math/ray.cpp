@@ -8,3 +8,13 @@
 **/
 
 #include "ray.h"
+
+namespace OpRt
+{
+// 	Color Ray::trace(const std::vector<Sphere *> &, int, const std::vector<Light *> &){
+// 
+// 		return Vector3d(1);
+// 	}
+
+
+} // namespace OpRt

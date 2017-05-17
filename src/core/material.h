@@ -10,15 +10,16 @@
 #ifndef _MATERIAL_H_
 #define _MATERIAL_H_
 
-#include "../math/vector.h"
 
 namespace OpRt
 {
 
+enum Type { DIFF, SPEC, REFR }; //反射的类型
+
 class Material
 {
 	public:
-		enum Type {DIFF, SPEC, REFR};
+		
 		Material(Type type) : type_(type) {}
 		Type type() const { return type_; }
 

@@ -15,6 +15,7 @@
 #include <iomanip>
 #include <cmath>
 #include <cassert>
+#include <algorithm>  
 
 namespace OpRt{
 
