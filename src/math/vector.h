@@ -153,9 +153,9 @@ class Vector3
 			return Vector3<T>(x_ + v.x_, y_ + v.y_, z_ + v.z_);
 		}
 		Vector3<T> & operator += (const Vector3<T> &v){
-			_x += v.x_;
-			_y += v.y_;
-			_z += v.z_;
+			x_ += v.x_;
+			y_ += v.y_;
+			z_ += v.z_;
 			return *this;
 		}
 
@@ -163,9 +163,9 @@ class Vector3
 			return Vector3<T>(x_ - v.x_, y_ - v.y_, z_ - v.z_);
 		}
 		Vector3<T> & operator -= (const Vector3<T> &v){
-			_x -= v.x_;
-			_y -= v.y_;
-			_z -= v.z_;
+			x_ -= v.x_;
+			y_ -= v.y_;
+			z_ -= v.z_;
 			return *this;
 		}
 
@@ -251,6 +251,13 @@ inline Vector3<T> normalize(const Vector3<T> &v){
 	double len = v.length();
 	assert(len);
 	return v / len;
+}
+
+template<typename T>
+inline void normalize(Vector3<T> &v){
+	double len = v.length();
+	assert(len);
+	v = v / len;
 }
 
 //

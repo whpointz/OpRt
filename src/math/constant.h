@@ -24,6 +24,9 @@ namespace OpRt
 	const double kEpsilon = 1e-4;
 	const double E = 2.718281828459045;
 
+
+	const double DOUBLE_MAX = std::numeric_limits<double>::max();
+
 	enum Axis { Xaxis = 0, Yaxis, Zaxis };
 
 	inline double radian(double angle) {

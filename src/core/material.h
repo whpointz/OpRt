@@ -14,7 +14,7 @@
 namespace OpRt
 {
 
-enum Type { DIFF, SPEC, REFR }; //反射的类型
+enum Type { DIFF, SPEC, REFR }; //反射的类型 漫反射 镜面反射 反射和折射
 
 class Material
 {

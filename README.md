@@ -9,3 +9,8 @@ OpRt is a Ray Tracer like optix.
 
 
 持续更新中......
+
+
+# 漫反射 
+完成时间：2017-5-22
+效果图：![](image/image.ppm)

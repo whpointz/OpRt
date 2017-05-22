@@ -28,7 +28,8 @@ class  Ray
 		const Point3d & origin() const { return ori_; }
 		const Vector3d & direction() const { return dir_; }
 
-		Color trace(const std::vector<Sphere* > &, int,  const std::vector<Light* > &);
+		//通过球体的列表和光源的列表，得到颜色
+		Color trace(const std::vector<Sphere* > &spheres, int depth, const std::vector<Light* > &lights);
 
 		//通过
 		void ComputeDirection(const int &width, const int &height, const int &x, const int &y, const double &angle){
@@ -47,7 +48,8 @@ class  Ray
 			return os << "ori: " << ray.ori_ << "dir:" << ray.dir_;
 		}
 
-		Sphere* _findHitObject(const std::vector<Sphere* > &, double &);
+		//判断光线与物体i是否相交，若相交，返回相交距离最短的物体
+		Sphere* _findHitObject(const std::vector<Sphere* > &spheres, double &near);
 
 };
 

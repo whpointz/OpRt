@@ -28,13 +28,18 @@ class Sphere
 			  const  Type &refl) 
 			  :center_(center), radius_(radius), radius2_(radius * radius), inv2radius_(1.0 / (2 * radius)), emission_(emission), color_(color), refl_(refl) {  };
 		
-		//返回光源到球体的距离 值为-1说明光线和球体不相交  
+		//返回射线到球体的距离 值为-1说明射线和球体不相交  
 		double  intersect(const Vector3d &origin, const Vector3d direction)const;
 
 		std::ostream& print(std::ostream &os) {
 			return os << "sphere\n center: " << center_ << "radius: " << radius_ << std::endl;
 		}
 
+		const Vector3d& center()const { return center_; }
+
+		const Type refl() const { return refl_; }
+
+		const Color surfaceColor() const { return color_; }
 
 	private:
 
